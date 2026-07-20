@@ -21,8 +21,8 @@ my_dict['list'].append(29)
 my_dict['list'].pop(1)
 
 # Для того, что хранится под ключом ‘dict’:
-my_dict['dict']['i am tuple'] = (1,)
-my_dict['dict'].pop('dict_string', None)
+my_dict['dict'][('i am tuple',)] = (1,)
+my_dict['dict'].pop('g', None)
 
 # Для того, что хранится под ключом ‘set’:
 my_dict['set'].add(90)
