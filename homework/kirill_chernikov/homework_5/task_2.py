@@ -15,3 +15,4 @@ template_number_index = txt_template.index(' ')
 result = int(txt_template[template_number_index:]) + 10
 
 print(result)
+
