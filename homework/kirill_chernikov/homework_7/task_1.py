@@ -13,4 +13,5 @@ def guess_the_number():
 
     print('Поздравляю! Вы угадали!')
 
+
 guess_the_number()
