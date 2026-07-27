@@ -1,17 +1,18 @@
 # Задание - нужно написать один код (который сможет работать с любым из примеров)
 # и скопировать его для обработки каждой строки
 
-# Возможно бегу впереди паравоза, но решил перевести все в шаблон;
-# вроде решение универсальное
-
 txt_1 = 'результат операции: 42'
+number_index_1 = txt_1.index(':')
+result_1 = int(txt_1[number_index_1 + 2:]) + 10
+print(result_1)
 
 
 txt_2 = 'результат операции: 514'
+number_index_2 = txt_2.index(':')
+result_2 = int(txt_2[number_index_2 + 2:]) + 10
+print(result_2)
+
 txt_3 = 'результат работы программы: 9'
-
-txt_template = 'string: 123'
-template_number_index = txt_template.index(' ')
-result = int(txt_template[template_number_index:]) + 10
-
-print(result)
+number_index_3 = txt_3.index(':')
+result_3 = int(txt_3[number_index_3 + 2:]) + 10
+print(result_3)
