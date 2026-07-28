@@ -3,6 +3,7 @@
 
 global_iteration_counter = 1
 
+
 def fibonacci_numbers():
     counter = 1
     numbers = [0, 1]
@@ -15,7 +16,7 @@ def fibonacci_numbers():
 
 """
 Интернеты подсказали вот такую реализацию
-Решил закрепить написанием 
+Решил закрепить написанием
 
 def fibonacci_numbers():
     a, b = 1, 1
@@ -25,7 +26,7 @@ def fibonacci_numbers():
     while True:
         a, b = b, a + b
         yield b
-        
+ 
 iteration_counter = 0
 """
 
@@ -37,6 +38,3 @@ for number in fibonacci_numbers():
 
     if global_iteration_counter > 100000:
         break
-
-
-

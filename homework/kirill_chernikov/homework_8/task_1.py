@@ -1,7 +1,8 @@
-#Напишите программу. Есть две переменные, salary и bonus.
+# Напишите программу. Есть две переменные, salary и bonus.
 # Salary - int, bonus - bool. Спросите у пользователя salary. А bonus пусть назначается рандомом.
 
 import random
+
 
 def total_salary(salary):
     bonus = bool(random.randint(0, 1))
