@@ -26,7 +26,7 @@ def fibonacci_numbers():
     while True:
         a, b = b, a + b
         yield b
- 
+
 iteration_counter = 0
 """
 
