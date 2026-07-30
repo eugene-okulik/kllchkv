@@ -5,13 +5,11 @@ global_iteration_counter = 1
 
 
 def fibonacci_numbers():
-    counter = 1
     numbers = [0, 1]
 
-    while counter != 100004:
+    while True:
         numbers.append(numbers[-1] + numbers[-2])
         yield numbers[-1]
-        counter += 1
 
 
 """
@@ -32,8 +30,7 @@ iteration_counter = 0
 
 for number in fibonacci_numbers():
     global_iteration_counter += 1
-    if (global_iteration_counter == 5 or global_iteration_counter == 200
-            or global_iteration_counter == 1000 or global_iteration_counter == 100000):
+    if global_iteration_counter in [5, 200, 1000, 100000]:
         print(number)
 
     if global_iteration_counter > 100000:
