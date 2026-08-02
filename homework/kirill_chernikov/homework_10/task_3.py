@@ -24,7 +24,7 @@ def calc(first_num, second_num, operation=None):
     if operation == '+':
         return first_num + second_num
     elif operation == '-':
-        return  first_num - second_num
+        return first_num - second_num
     elif operation == '*':
         return first_num * second_num
     elif operation == '/':
