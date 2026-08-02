@@ -11,5 +11,4 @@ PRICE_LIST = '''тетрадь 50р
 
 list_price_list = [elem.rstrip('р').split() for elem in PRICE_LIST.split('\n')]
 dict_price_list = {key: int(value) for key, value in list_price_list}
-print(list_price_list)
 print(dict_price_list)

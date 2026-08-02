@@ -13,4 +13,5 @@ def add_finished(func):
 def example_func(text, second_text):
     print(text, second_text)
 
+
 example_func("I am test function.", "I test text.")

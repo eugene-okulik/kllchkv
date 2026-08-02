@@ -18,6 +18,7 @@ def choose_operator(func):
 
     return wrapper
 
+
 @choose_operator
 def calc(first_num, second_num, operation=None):
     if operation == '+':
@@ -30,6 +31,7 @@ def calc(first_num, second_num, operation=None):
         return first_num / second_num
 
     return None, 'Неизвестная операция, попробуйте еще раз'
+
 
 num_1, num_2 = 1, -10
 call_decorator = calc(num_1, num_2)
