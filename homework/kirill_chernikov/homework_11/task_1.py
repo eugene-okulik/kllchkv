@@ -4,7 +4,7 @@ class Book:
     page_material = 'бумага'
     has_text = True
 
-    def __init__(self, title, author, pages_number, isbn, reserved = False):
+    def __init__(self, title, author, pages_number, isbn, reserved=False):
         self.title = title
         self.author = author
         self.pages_number = pages_number
@@ -60,7 +60,7 @@ for book in books:
 
 
 class SchoolBook(Book):
-    def __init__(self, title, author, pages_number, isbn, subject, class_id, has_tasks: bool, reserved = False):
+    def __init__(self, title, author, pages_number, isbn, subject, class_id, has_tasks: bool, reserved=False):
         super().__init__(title, author, pages_number, isbn, reserved)
         self.subject = subject
         self.class_id = class_id
@@ -68,7 +68,7 @@ class SchoolBook(Book):
 
 
 book_al = SchoolBook(
-"Алгебра 9 класс",
+    "Алгебра 9 класс",
     "Иван",
     1000,
     "979-5-17-090630-9",
@@ -78,7 +78,7 @@ book_al = SchoolBook(
 )
 
 book_hi = SchoolBook(
-"История Древнего Рима",
+    "История Древнего Рима",
     "Дмитрий",
     503,
     "939-5-17-090630-9",
@@ -89,7 +89,7 @@ book_hi = SchoolBook(
 )
 
 book_ru = SchoolBook(
-"Русский язык 8 класс",
+    "Русский язык 8 класс",
     "Ольга",
     203,
     "555-5-17-090630-9",
