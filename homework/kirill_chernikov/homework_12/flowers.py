@@ -28,6 +28,7 @@ rose = Rose('Роза', 'Красный', 30, 3, 100, True)
 chamomile = Chamomile('Ромашка', 'Белый', 10, 1, 15)
 orchid = Orchid('Орхидея', 'Сиреневый', 25, 7, 550, 'Дикая')
 
+
 class Bouquet:
     def __init__(self, flowers: list, order_flowers: dict):
         self.flowers = flowers
