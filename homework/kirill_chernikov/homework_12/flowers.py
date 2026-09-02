@@ -45,17 +45,8 @@ class Bouquet:
     def calculate_days_lifespan(self):
         return sum([flower.vase_life for flower in self.order_flowers]) / len(self.order_flowers)
 
-    def sort_by_vase_life(self):
-        return sorted(self.flowers, key=lambda x: x.vase_life)
-
-    def sort_by_name(self):
-        return sorted(self.flowers, key=lambda x: x.name)
-
-    def sort_by_color(self):
-        return sorted(self.flowers, key=lambda x: x.color)
-
-    def sort_by_cost(self):
-        return sorted(self.flowers, key=lambda x: x.cost)
+    def sort_by_key(self, key):
+        return sorted(self.flowers, key=lambda x: getattr(x, key))
 
     def find_by_param(self, param, param_name):
         for flower in self.flowers:
@@ -79,8 +70,8 @@ bouquet = Bouquet(bouq, order)
 days = bouquet.calculate_days_lifespan()
 t_cost = bouquet.calculate_cost()
 new_flower = bouquet.find_by_name('Роза')
-sort_flowers_vase_life = bouquet.sort_by_vase_life()
-sort_flowers_by_name = bouquet.sort_by_name()
+sort_flowers_vase_life = bouquet.sort_by_key('vase_life')
+sort_flowers_by_name = bouquet.sort_by_key('name')
 
 print(days)
 print(t_cost)
