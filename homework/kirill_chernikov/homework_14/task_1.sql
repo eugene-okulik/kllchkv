@@ -1,7 +1,7 @@
 -- student
 
-INSERT INTO students (name, second_name, group_id)
-VALUES ('Kirill', 'Chernikov', 1);
+INSERT INTO students (name, second_name)
+VALUES ('Kirill', 'Chernikov');
 
 -- books
 
