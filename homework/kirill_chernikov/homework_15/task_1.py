@@ -31,12 +31,8 @@ books = [
     ('Алгоритмы 2026 ч. 2', student_id),
     ('Алгоритмы 2026 ч. 3', student_id),
 ]
-books_ids = {}
 
-for book_tuple in books:
-    cursor.execute(create_book, book_tuple)
-    book_id = cursor.lastrowid
-    books_ids[book_tuple[0]] = book_id
+cursor.executemany(create_book, books)
 
 create_subject = """
 INSERT INTO subjects (title)
