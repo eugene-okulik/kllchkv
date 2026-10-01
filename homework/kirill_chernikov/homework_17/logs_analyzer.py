@@ -35,7 +35,7 @@ def read_file(path) -> dict[str, list]:
                 log_date = line_beginning
                 line = line[24:]
 
-            result_with_idx[log_date].append((idx+1, line))
+            result_with_idx[log_date].append((idx + 1, line))
 
         return result_with_idx
 
@@ -63,7 +63,7 @@ def open_file(path: str) -> dict[str, dict] | tuple[None, str]:
 
         for file_name in files:
             new_path = f'{path}/{file_name}'
-            data = read_file(new_path) # получаем данные в виде {'log_data': [...]}
+            data = read_file(new_path)  # получаем данные в виде {'log_data': [...]}
             files_map[file_name] = data
 
     else:
