@@ -2,6 +2,7 @@ import requests
 
 BASE_URL = 'http://objapi.course.qa-practice.com'
 
+
 def get_all_objects():
     response = requests.get(f'{BASE_URL}/object')
     print(response.json())
