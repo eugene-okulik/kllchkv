@@ -79,4 +79,3 @@ def test_delete_object(before_after_alert, object_id):
     response = requests.delete(f'{BASE_URL}/object/{object_id}')
 
     assert response.status_code == 200, 'Статус ответа != 200, не удалось удалить запись'
-
