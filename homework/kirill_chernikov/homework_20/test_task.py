@@ -45,9 +45,14 @@ def clear(obj_id):
     print(f'Код статуса удаления тестовой записи: {response.status_code}')
 
 
+test_data = [{'name': 'test_data', 'data': {'data_name': 'test', 'is_valid': True}},
+             {'name': '3', 'data': {'data_name': 'digit', 'is_valid': True}},
+             {'name': '', 'data': {'data_name': 'empty_name', 'is_valid': False}}]
+
+
 @pytest.mark.critical
-def test_create_object(before_after_alert):
-    body = {'name': 'test_data', 'data': {'data_name': 'test', 'is_valid': True}}
+@pytest.mark.parametrize('body', test_data)
+def test_create_object(before_after_alert, body):
     response = requests.post(f'{BASE_URL}/object', json=body)
 
     assert response.status_code == 200, 'Статус ответа != 200, не удалось создать объект'
