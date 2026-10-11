@@ -35,6 +35,6 @@ class ObjectApi(HttpUser):
         self.get_data.get_by_id(client=self.client, object_id=self.object_id)
 
     @task(2)
-    def update_user(self):
+    def full_update_user(self):
         body = {'name': 'test_data_FULL_UPDATE', 'data': {'data_name': 'test_UPDATE', 'is_valid': False}}
-        self.update_data.update(client=self.client, object_id=self.object_id, body=body)
+        self.update_data.update_full(client=self.client, object_id=self.object_id, body=body)
