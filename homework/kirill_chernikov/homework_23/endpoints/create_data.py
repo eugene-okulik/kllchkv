@@ -8,7 +8,7 @@ class CreateData(Endpoint):
     @allure.step('Создание нового объекта')
     def create(self, body, client):
         # self.client = client
-        self.response = client.post(f'/object', json=body)
+        self.response = client.post('/object', json=body)
 
         if self.response.status_code != 200:
             print(f'Код статуса создания тестовой записи: {self.response.status_code}')

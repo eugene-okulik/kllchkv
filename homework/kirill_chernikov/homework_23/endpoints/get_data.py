@@ -1,6 +1,5 @@
 import allure
 
-
 from endpoints.endpoint import Endpoint
 
 
@@ -8,7 +7,7 @@ class GetData(Endpoint):
     @allure.step('Получение всех существующих объектов')
     def get_all(self, client):
         # self.client = client
-        self.response = client.get(f'/object')
+        self.response = client.get('/object')
 
         if self.response.status_code != 200:
             print(f'Код статуса создания тестовой записи: {self.response.status_code}')

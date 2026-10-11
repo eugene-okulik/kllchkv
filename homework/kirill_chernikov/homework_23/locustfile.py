@@ -28,13 +28,13 @@ class ObjectApi(HttpUser):
 
     @task(1)
     def get_users(self):
-        response = self.get_data.get_all(client=self.client)
+        self.get_data.get_all(client=self.client)
 
     @task(3)
     def get_user_by_id(self):
-        response = self.get_data.get_by_id(client=self.client, object_id=self.object_id)
+        self.get_data.get_by_id(client=self.client, object_id=self.object_id)
 
     @task(2)
     def update_user(self):
         body = {'name': 'test_data_FULL_UPDATE', 'data': {'data_name': 'test_UPDATE', 'is_valid': False}}
-        response = self.update_data.update(client=self.client, object_id=self.object_id, body=body)
+        self.update_data.update(client=self.client, object_id=self.object_id, body=body)
