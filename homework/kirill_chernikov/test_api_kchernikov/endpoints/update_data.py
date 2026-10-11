@@ -5,9 +5,9 @@ from homework.kirill_chernikov.test_api_kchernikov.endpoints.endpoint import End
 
 
 class UpdateData(Endpoint):
-    @allure.step('Обновление объекта')
-    def update(self, object_id, body):
-        self.response = requests.patch(f'{self.url}/object/{object_id}', json=body)
+    @allure.step('Полное обновление объекта')
+    def update_full(self, object_id, body):
+        self.response = requests.put(f'{self.url}/object/{object_id}', json=body)
         if self.response.status_code != 200:
             print(f'Код статуса создания тестовой записи: {self.response.status_code}')
             print(f'Ответ: {self.response.text}')
@@ -16,20 +16,13 @@ class UpdateData(Endpoint):
 
         self.response_json = self.response.json()
 
-    def assert_param(self, body, param):
-        assert self.response_json[param] == body[param], f'Параметр {param} не обновлен'
+    @allure.step('Частичное обновление объекта')
+    def update_part(self, object_id, body):
+        self.response = requests.patch(f'{self.url}/object/{object_id}', json=body)
+        if self.response.status_code != 200:
+            print(f'Код статуса создания тестовой записи: {self.response.status_code}')
+            print(f'Ответ: {self.response.text}')
 
-    def assert_nested_param(self, body: dict, path_to_param: str):
-        # {'data': {'data_name': 'test', 'is_valid': True}, 'id': 3, 'name': 'test_data'}
+            self.response.raise_for_status()
 
-        params = path_to_param.split('.')
-        nested_value_response = self.response_json.copy()
-        nested_value_request = body.copy()
-
-        for param in params:
-            nested_value_response = nested_value_response[param]
-            nested_value_request = nested_value_request[param]
-
-        print(nested_value_response)
-        print(nested_value_request)
-        assert nested_value_response == nested_value_request, f'Параметр {path_to_param} не обновлен'
+        self.response_json = self.response.json()

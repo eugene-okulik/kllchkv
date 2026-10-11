@@ -7,7 +7,7 @@ import pytest
 @allure.title('Полное обновление объекта')
 def test_update_whole_object(object_id_with_cleanup, update_data):
     body = {'name': 'test_data_FULL_UPDATE', 'data': {'data_name': 'test_UPDATE', 'is_valid': False}}
-    update_data.update(object_id=object_id_with_cleanup, body=body)
+    update_data.update_full(object_id=object_id_with_cleanup, body=body)
     update_data.assert_param(body, 'name')
     update_data.assert_nested_param(body, 'data.is_valid')
 
@@ -18,7 +18,7 @@ def test_update_whole_object(object_id_with_cleanup, update_data):
 @pytest.mark.medium
 def test_update_part_of_object(object_id_with_cleanup, update_data):
     body = {'name': 'test_data_PART_UPDATE'}
-    update_data.update(object_id=object_id_with_cleanup, body=body)
+    update_data.update_part(object_id=object_id_with_cleanup, body=body)
     update_data.assert_param(body, 'name')
 
 
