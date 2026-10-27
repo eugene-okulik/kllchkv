@@ -81,7 +81,8 @@ sports_hobby.click()
 music_hobby = driver.find_element(By.ID, 'hobbies-checkbox-3')
 music_hobby.click()
 
-current_address = driver.find_element(By.ID, 'currentAddress-wrapper')
+current_address = driver.find_element(By.ID, 'currentAddress')
+current_address.send_keys('Ulitsa Testov UI')
 
 state_listbox = driver.find_element(By.ID, 'state')
 # actions.scroll_to_element(state_listbox).perform()
