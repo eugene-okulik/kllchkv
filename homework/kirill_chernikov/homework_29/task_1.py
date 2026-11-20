@@ -7,11 +7,14 @@ def test_alert(page: Page):
     page.get_by_role(role='link', name='Click').click()
     text = page.get_by_text('You selected')
     expect(text).to_be_visible()
+    result_text = page.locator('#result-text')
+    expect(result_text).to_have_text('Ok')
 
 
 def test_new_tab(page: Page, context: BrowserContext):
     page.goto('https://www.qa-practice.com/elements/new_tab/button')
     link = page.locator('#new-page-button')
+    expect(link).to_be_visible()
     with context.expect_page() as new_page:
         link.click()
 
@@ -26,3 +29,4 @@ def test_color_change(page: Page):
     button = page.locator('#colorChange')
 
     expect(button).to_have_css(name='color', value='rgb(220, 53, 69)', timeout=6000)
+    button.click()
