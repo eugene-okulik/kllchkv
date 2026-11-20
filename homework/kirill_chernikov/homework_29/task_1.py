@@ -3,8 +3,8 @@ from playwright.sync_api import Page, expect, BrowserContext
 
 def test_alert(page: Page):
     page.goto('https://www.qa-practice.com/elements/alert/confirm')
-    page.get_by_role(role='link', name='Click').click()
     page.on('dialog', lambda alert: alert.accept())
+    page.get_by_role(role='link', name='Click').click()
     text = page.get_by_text('You selected')
     expect(text).to_be_visible()
 
