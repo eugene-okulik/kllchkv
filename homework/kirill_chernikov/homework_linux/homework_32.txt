@@ -1,0 +1,25 @@
+TASK #1
+Go to first line in file: g
+Go to last line in file: G
+
+Forward  one window: f
+
+Forward  one line: e
+Backward one line: y
+
+Search forward for matching line: /pattern (например, /mknod)
+Search backward for matching line: ?pattern (например, ?help)
+
+Repeat previous search (for N-th occurrence): n
+Repeat previous search in reverse direction: N
+
+TASK #2
+/dev/null - c (символьное устройство)
+/dev/zero - c (символьное устройство)
+/dev/sda - b (блочное устройство)
+/dev/tty - c (символьное устройство)
+/root - d (каталог)
+/etc/passwd - f (файл)
+/proc/mounts - l (символьная ссылка)
+/bin/ls - l (символьная ссылка)
+/bin/zcat - f (файл)
